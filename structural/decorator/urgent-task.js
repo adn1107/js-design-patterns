@@ -1,4 +1,6 @@
 var Task = require('../../creational/contructor/task-es6')
+const deb = require('../../node_modules/debug')
+const debug = deb("taskApp:");
 
 class UrgentTask extends Task {
     constructor(data) {
@@ -11,14 +13,14 @@ class UrgentTask extends Task {
     }
 
     complete() {
-        // console.log('Handling urgent task');
+        debug('Handling urgent task');
         super.complete();
         this.notify();
     }
 
     notify() {
         this.notified = true;
-        // console.log('Notifying people');
+        debug('Notifying people');
     }
 
 }

@@ -1,0 +1,27 @@
+{
+  "name": "js-design-patterns",
+  "version": "1.0.0",
+  "description": "Sample Task app with GoF design patterns",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adn1107/js-design-patterns.git"
+  },
+  "keywords": [
+    "design",
+    "patterns",
+    "GoF"
+  ],
+  "author": "Andrew Nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adn1107/js-design-patterns/issues"
+  },
+  "homepage": "https://github.com/adn1107/js-design-patterns#readme",
+  "dependencies": {
+    "debug": "^3.1.0"
+  }
+}

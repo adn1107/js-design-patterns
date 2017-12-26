@@ -1,4 +1,6 @@
 var Repo = require('../module/task-repo')
+const deb = require('../../node_modules/debug')
+const debug = deb("taskApp:");
 
 var Task = function(data) {
   this.name = data.name;
@@ -6,13 +8,13 @@ var Task = function(data) {
 }
 
 Task.prototype.complete = function() {
-  console.log("completing task: " + this.name);
+  debug("completing task: " + this.name);
   this.completed = true;
   Repo.save(this);
 };
 
 Task.prototype.save = function() {
-  console.log("saving task: " + this.name);
+  debug("saving task: " + this.name);
   Repo.save(this);
 };
 

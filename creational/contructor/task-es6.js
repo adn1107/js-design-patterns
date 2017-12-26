@@ -13,9 +13,9 @@ class Task {
     this.urgent = false;
     this.notified = false;
     this.manager1 = TaskManager.getInstance();
-    this.manager1 = TaskManager.getInstance();
+    this.manager2 = TaskManager.getInstance();
 
-    if (this.manager1 === this.manager1) {
+    if (this.manager1 === this.manager2) {
       this.manager1.totalCount++;
       this.manager1.tasks.push(this);
     } else {

@@ -22,7 +22,9 @@ class TaskManager {
   printTasks() {
     this.tasks.forEach(element => {
       console.log(
-        `Task:  ${element.name}    Completed:  ${element.completed}  Urgent: ${element.urgent}  Notified: ${element.notified}`
+        `Task:  ${element.name}    Completed:  ${element.completed}  Urgent: ${
+          element.urgent
+        }  Notified: ${element.notified}`
       );
     });
   }

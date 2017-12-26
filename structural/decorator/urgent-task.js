@@ -5,7 +5,7 @@ const debug = deb("taskApp:");
 class UrgentTask extends Task {
     constructor(data) {
         super(data);
-        this.urgent = true;
+        // this.urgent = true;
     }
 
     save() {
@@ -19,7 +19,7 @@ class UrgentTask extends Task {
     }
 
     notify() {
-        this.notified = true;
+        this.flyweight.notified = true;
         debug('Notifying people');
     }
 

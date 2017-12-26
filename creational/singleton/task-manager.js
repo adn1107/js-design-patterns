@@ -19,12 +19,19 @@ class TaskManager {
     return taskManager;
   }
 
+  completeTasks() {
+    let i = 0;
+    while (i < 10 ) {
+      this.tasks[Math.floor((Math.random()*this.tasks.length))].complete();
+      i++;
+    }
+  }
+
   printTasks() {
     this.tasks.forEach(element => {
       console.log(
-        `Task:  ${element.name}    Completed:  ${element.completed}  Urgent: ${
-          element.urgent
-        }  Notified: ${element.notified}`
+        `Task:  ${element.name} Completed:  ${element.flyweight.completed}  Urgent: ${element.flyweight.urgent} Priority: ${element.flyweight.priority}  Assignee: ${element.flyweight.assignees} Notified: ${element.flyweight.notified}
+         `
       );
     });
   }

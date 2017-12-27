@@ -27,6 +27,15 @@ class TaskManager {
     }
   }
 
+  registerObservers(als, ls, aus) {
+    this.tasks.forEach(task => {
+      task.addObserver(als.update)
+      task.addObserver(ls.update)
+      task.addObserver(aus.update)
+    })
+
+  }
+
   printTasks() {
     this.tasks.forEach(element => {
       console.log(

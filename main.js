@@ -6,6 +6,7 @@ const UrgentTask = require('./structural/decorator/urgent-task'); // decorator
 const TaskFlyweight = require('./structural/flyweight/task-flyweight'); // flyweight
 const nsFactory = require('./creational/factory/notification-service-factory');  //factory
 const ObservableTask = require('./behavioral/observer/task-observable'); // observer
+const TaskMediator = require('./behavioral/mediator/task-mediator'); // mediator
 
 
 
@@ -31,13 +32,15 @@ for (let i=0; i < 20; i++) {
         assignees: assignees[Math.floor((Math.random() *4))],
     })
     newTask.addObserver(alertService.update)
-    newTask.addObserver(loggingService.update)
-    newTask.addObserver(auditService.update)
-    newTask.removeObserver(auditService.update)
+    // newTask.addObserver(loggingService.update)
+    // newTask.addObserver(auditService.update)
+    // newTask.removeObserver(auditService.update)
 }
+// TaskMediator.subscribe('complete', alertService, alertService.update)
+TaskMediator.subscribe('complete', loggingService, loggingService.update)
+TaskMediator.subscribe('complete', auditService, auditService.update)
 
-// taskManager.registerObservers(alertService, loggingService, auditService);
-taskManager.completeTasks();
+taskManager.completeTasks(TaskMediator);
 taskService.display();
 console.log(TaskFlyweight.getCount());
 

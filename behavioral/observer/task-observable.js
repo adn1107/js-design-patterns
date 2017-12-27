@@ -1,5 +1,7 @@
 const Task = require('../../creational/contructor/task-es6')
 const ObserverList = require('./task-observer-list')
+const TaskMediator = require('../mediator/task-mediator'); // mediator
+
 const deb = require('../../node_modules/debug')
 const debug = deb("taskApp:");
 
@@ -25,8 +27,9 @@ class ObservableTask extends Task {
         }
     }
 
-    complete() {
+    complete(mediator) {
         super.complete();
+        mediator.publish('complete', this);
         this.notify(this);
     }
 

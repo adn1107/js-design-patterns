@@ -19,10 +19,10 @@ class TaskManager {
     return taskManager;
   }
 
-  completeTasks() {
+  completeTasks(meditor) {
     let i = 0;
     while (i < 10 ) {
-      this.tasks[Math.floor((Math.random()*this.tasks.length))].complete();
+      this.tasks[Math.floor((Math.random()*this.tasks.length))].complete(meditor);
       i++;
     }
   }
